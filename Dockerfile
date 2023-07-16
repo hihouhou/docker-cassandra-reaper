@@ -9,8 +9,8 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV REAPER_VERSION=3.3.2
-ENV REAPER_HOME=/opt/cassandra-reaper
+ENV REAPER_VERSION 3.3.2
+ENV REAPER_HOME /opt/cassandra-reaper
 
 # Update & install packages
 RUN apt-get update && apt-get install -y wget default-jdk
@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y wget default-jdk
 # Téléchargez et extrayez Cassandra Reaper
 RUN mkdir -p $REAPER_HOME && \
     cd /tmp/ && \
-#    curl https://github.com/thelastpickle/cassandra-reaper/releases/download/${REAPER_VERSION}/reaper_${REAPER_VERSION}_all.deb -o reaper_${REAPER_VERSION}_all.deb && \
     wget https://github.com/thelastpickle/cassandra-reaper/releases/download/${REAPER_VERSION}/reaper_${REAPER_VERSION}_all.deb && \
     dpkg -i reaper_${REAPER_VERSION}_all.deb
 
@@ -32,5 +31,4 @@ WORKDIR $REAPER_HOME
 EXPOSE 8080
 
 # Démarrez Cassandra Reaper lors du démarrage du conteneur
-#CMD ["./run.sh", "-Dcassandra-reaper.config=$REAPER_HOME/config/cassandra-reaper.yaml"]
 CMD java -jar /usr/share/cassandra-reaper/cassandra-reaper-${REAPER_VERSION}.jar server /opt/cassandra-reaper/config/cassandra-reaper.yaml
