@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV REAPER_VERSION 3.3.3
+ENV REAPER_VERSION 3.3.4
 ENV REAPER_HOME /opt/cassandra-reaper
 
 # Update & install packages
