@@ -9,8 +9,8 @@ FROM debian:latest
 
 LABEL org.opencontainers.image.authors="hihouhou < hihouhou@hihouhou.com >"
 
-ENV REAPER_VERSION 3.6.1
-ENV REAPER_HOME /opt/cassandra-reaper
+ENV REAPER_VERSION=3.6.1
+ENV REAPER_HOME=/opt/cassandra-reaper
 
 # Update & install packages
 RUN apt-get update && apt-get install -y wget default-jdk
