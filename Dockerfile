@@ -9,7 +9,7 @@ FROM debian:latest
 
 LABEL org.opencontainers.image.authors="hihouhou < hihouhou@hihouhou.com >"
 
-ENV REAPER_VERSION=4.2.0-build2
+ENV REAPER_VERSION=4.2.1
 ENV REAPER_HOME=/opt/cassandra-reaper
 
 # Update & install packages
